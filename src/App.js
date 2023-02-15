@@ -6,14 +6,14 @@ function App(props) {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const url = "https://jsonplaceholder.typicode.com/posts?userId =${1}";
+    const url = "https://jsonplaceholder.typicode.com/posts?userId =${userId}";
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
         console.log("DATA", data);
         setData(data)
       });
-  },[]);
+  },[userId]);
 
   return (
     <div className="App" style={{ padding: 20 }}>
