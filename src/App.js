@@ -1,23 +1,29 @@
-import React, { useState } from "react";
+//----------------useEffect hook---------------------------
+import React, { useState, useEffect } from "react";
 
-function App() {
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
+function App(props) {
+  const [userId, setUserid] = useState("1");
+  const [data, setData] = useState([]);
 
-  function handleChange(e) {
-    setEmail(e.target.value);
-  }
-  function handleChangeName(e) {
-    setName(e.target.value);
-  }
+  useEffect(() => {
+    const url = "https://jsonplaceholder.typicode.com/posts?userId =${1}";
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("DATA", data);
+        setData(data)
+      });
+  });
 
   return (
-    <div className="App" style={{ padding: 10 }}>
-      <input value={email} onChange={handleChange} />
-
-      <input value={name} onChange={handleChangeName} />
-      <p>Email:{email}</p>
-      <p>Name:{name}</p>
+    <div className="App" style={{ padding: 20 }}>
+      <h1>App</h1>
+      <button onClick={() => setUserid("2")}>Change user id to 2 </button>
+      {data.map((user) => (
+        <div>
+          <p>Name:{user.title}</p>
+        </div>
+      ))}
     </div>
   );
 }
