@@ -11,10 +11,16 @@ function App(props) {
       .then((response) => response.json())
       .then((data) => {
         console.log("DATA", data);
-        setData(data)
+        setData(data);
       });
-  },[userId]);
+  }, [userId]);
 
+  useEffect(() => {
+    document.addEventListener('mousemove',onmouseMove);
+  });
+  function onmouseMove(event) {
+    console.log(event.clientX);
+  }
   return (
     <div className="App" style={{ padding: 20 }}>
       <h1>App</h1>
