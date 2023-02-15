@@ -1,30 +1,29 @@
-import React from "react";
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { email: "", name: "" };
-  }
-  handleChange = (e) => {
-    this.setState({
-      email: e.target.value,
-    });
-  };
-  handleChangeName = (e) => {
-    this.setState({
-      name: e.target.value,
-    });
-  };
+import React, { useState } from "react";
 
-  render() {
-    return (
-      <div className="App" style={{ padding: 10 }}>
-        <input value={this.state.email} onChange={this.handleChange} />
+function App() {
+  const emailState = useState("");
+  const email = emailState[0];
+  const setEmail = emailState[1];
 
-        <input value={this.state.name} onChange={this.handleChangeName} />
-        <p>Email:{this.state.email}</p>
-        <p>Name:{this.state.name}</p>
-      </div>
-    );
-  }
+  const nameState = useState("");
+  const name = nameState[0];
+  const setName = nameState[1];
+
+function handleChange (e) {
+  setEmail(e.target.value);
+}
+function handleChangeName (e) {
+  setName(e.target.value);
+}
+
+return (
+  <div className="App" style={{ padding: 10 }}>
+    <input value={email} onChange={handleChange} />
+
+    <input value={name} onChange={handleChangeName} />
+    <p>Email:{email}</p>
+    <p>Name:{name}</p>
+  </div>
+);
 }
 export default App;
