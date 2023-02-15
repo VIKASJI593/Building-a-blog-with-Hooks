@@ -13,7 +13,7 @@ function App(props) {
         console.log("DATA", data);
         setData(data)
       });
-  });
+  },[]);
 
   return (
     <div className="App" style={{ padding: 20 }}>
