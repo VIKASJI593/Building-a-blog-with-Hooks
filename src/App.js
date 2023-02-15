@@ -17,6 +17,9 @@ function App(props) {
 
   useEffect(() => {
     document.addEventListener('mousemove',onmouseMove);
+  return () => {
+    document.removeEventListener('mousemove',onmouseMove);
+  }
   });
   function onmouseMove(event) {
     console.log(event.clientX);
