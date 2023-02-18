@@ -1,39 +1,101 @@
-//----------------useEffect hook---------------------------
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+
+function useFormInputs(initialValue) {
+  const [value, setValue] = useState("");
+
+  function handleChange(e) {
+    setValue(e.target.value);
+  }
+
+  return {
+    value,
+    onChange: handleChange,
+  };
+}
+
+function LoginForm() {
+  const email = useFormInputs("");
+  const password = useFormInputs("");
+
+  return (
+    <form>
+      <div>Email</div>
+      <div>
+        <input type="text" {...email} />
+      </div>
+      <br />
+      <div>Password</div>
+      <div>
+        <input type="password" {...password} />
+      </div>
+      <p>
+        <strong>
+          <em>Email:</em>
+        </strong>
+        {email.value}
+        <strong>
+          <em>Password:</em>
+        </strong>
+        {''}
+        {password.value}
+      </p>
+    </form>
+  );
+}
+
+function SignupForm() {
+  const email = useFormInputs("");
+  const password = useFormInputs("");
+  const confirmpassword = useFormInputs("");
+
+  return (
+    <form>
+      <div>Email</div>
+      <div>
+        <input type="text" {...email} />
+      </div>
+      <br />
+
+      <div>Password</div>
+      <div>
+        <input type="password" {...password} />
+      </div>
+      <br />
+
+      <div>Confirm Password</div>
+      <div>
+        <input type="password" {...confirmpassword} />
+      </div>
+      <p>
+        <strong>
+          <em>Email:</em>
+        </strong>
+        {email.value}
+        <strong>
+          <em>Password:</em>
+        </strong>
+        {''}
+        {password.value}
+        <strong>
+          <em>Confirm Password:</em>
+        </strong>
+        {''}
+        {confirmpassword.value}
+      </p>
+    </form>
+  );
+}
 
 function App(props) {
-  const [userId, setUserid] = useState("1");
-  const [data, setData] = useState([]);
-
-  useEffect(() => {
-    const url = "https://jsonplaceholder.typicode.com/posts?userId =${userId}";
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("DATA", data);
-        setData(data);
-      });
-  }, [userId]);
-
-  useEffect(() => {
-    document.addEventListener('mousemove',onmouseMove);
-  return () => {
-    document.removeEventListener('mousemove',onmouseMove);
-  }
-  });
-  function onmouseMove(event) {
-    console.log(event.clientX);
-  }
   return (
     <div className="App" style={{ padding: 20 }}>
-      <h1>App</h1>
-      <button onClick={() => setUserid("2")}>Change user id to 2 </button>
-      {data.map((user) => (
-        <div>
-          <p>Name:{user.title}</p>
-        </div>
-      ))}
+      <h2>Login</h2>
+      <LoginForm />
+      <br />
+      <h3>Signup</h3>
+      <SignupForm />
     </div>
   );
 }
+
 export default App;
