@@ -13,16 +13,16 @@ git remote set-url origin https://github.com/VIKASJI593/Building-a-blog-with-Hoo
 
 git remote -v
 
-git branch -M 1-Setting-up-Routes
+git branch -M main
 
 
 git branch
 
 git add .
 
-git commit -m "11-Custom-hooks"
+git commit -m "1-Setting-up-Routes"
 
 
-git push -u origin 11-Custom-hooks
+git push -u origin 1-Setting-up-Routes
 
-git push -f -u origin 11-Custom-hooks
+git push -f -u origin 1-Setting-up-Routes
