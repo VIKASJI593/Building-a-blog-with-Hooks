@@ -10,7 +10,7 @@ const Home = ({ posts }) => {
           <div className={styles.postHeader}>
             <div className={styles.postAvatar}>
               <img
-                src="https://image.flaticon.com/icons/svg/2154/2154651.svg"
+                src="https://img.icons8.com/color/256/boy-avatar.png"
                 alt="user-pic"
               />
               <div>
@@ -23,7 +23,7 @@ const Home = ({ posts }) => {
             <div className={styles.postActions}>
               <div className={styles.postLike}>
                 <img
-                  src="https://image.flaticon.com/icons/svg/1077/1077035.svg"
+                  src="https://img.icons8.com/material-rounded/256/facebook-like.png"
                   alt="likes-icon"
                 />
                 <span>5</span>
@@ -31,7 +31,7 @@ const Home = ({ posts }) => {
 
               <div className={styles.postCommentsIcon}>
                 <img
-                  src="https://image.flaticon.com/icons/svg/1380/1380338.svg"
+                  src="https://img.icons8.com/office/256/comments.png"
                   alt="comments-icon"
                 />
                 <span>2</span>
