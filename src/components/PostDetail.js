@@ -17,7 +17,7 @@ function PostDetail() {
         console.log('snapshot', snapshot.data());
         setPost(snapshot.data());
       });
-  }, []);
+  }, );
 
   return (
     <div className="post-detail">

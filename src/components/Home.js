@@ -80,9 +80,9 @@ function Home() {
 }
 
 export default Home;
-const styles = {
-  heading: {
-    marginTop: 30,
-    fontSize: 56,
-  },
-};
+// const styles = {
+//   heading: {
+//     marginTop: 30,
+//     fontSize: 56,
+//   },
+// };

@@ -2,12 +2,12 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyAbsryu-rZ7K5NXAc4uF_gkloMXbZNEKco',
-  authDomain: 'react-hooks-blog.firebaseapp.com',
-  projectId: 'react-hooks-blog',
-  storageBucket: 'react-hooks-blog.appspot.com',
-  messagingSenderId: '610536486659',
-  appId: '1:610536486659:web:9d0505f5992db8ddbbdb36',
+  apiKey: "AIzaSyD9WtVeyClk2U2cYgya62Mr0p6OPi6-jbs",
+  authDomain: "react-hooks-blog-4c8c7.firebaseapp.com",
+  projectId: "react-hooks-blog-4c8c7",
+  storageBucket: "react-hooks-blog-4c8c7.appspot.com",
+  messagingSenderId: "290878945192",
+  appId: "1:290878945192:web:3281ee32e5a1a640728f9d"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
