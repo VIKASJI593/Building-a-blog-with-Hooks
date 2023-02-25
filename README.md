@@ -12,6 +12,9 @@ git branch
 
 git remote add origin https://github.com/VIKASJI593/Building-a-blog-with-Hooks.git
 
+
+git remote set-url origin https://github.com/VIKASJI593/Building-a-blog-with-Hooks.git
+
 git remote -v
 
 git push -u origin react-styling
